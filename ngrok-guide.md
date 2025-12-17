@@ -35,3 +35,23 @@ ngrok http --host-header=rewrite 3000
 
 Both commands will create a public URL that tunnels to your local server. The `--host-header` flag ensures proper routing of requests.
 
+## Terminal Output
+
+After running ngrok, your terminal will display output similar to this:
+
+```
+Forwarding    https://bb35499d162e.ngrok-free.app -> http://localhost:3000
+```
+
+**Important**: The teacher needs to share this public URL (e.g., `https://bb35499d162e.ngrok-free.app`) with students so they can access the local server.
+
+## Verification
+
+To verify that ngrok is working correctly, test the public URL with curl:
+
+```bash
+curl https://bb35499d162e.ngrok-free.app/people
+```
+
+Replace `bb35499d162e.ngrok-free.app` with your actual ngrok URL. This should return the data from your local server's `/people` endpoint.
+
