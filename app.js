@@ -5,6 +5,10 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+    res.send("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'><h1>Welcome to the Spies Test Server</h1></br><p>This is a simple server for the Spies Test. Behave yourself and Happy Chanuka!</p></div>")
+});
+
 app.get('/people', (req, res) => {
     const filePath = path.join(__dirname, 'data', 'people.js');
     fs.readFile(filePath, 'utf8', (err, data) => {
